@@ -11,6 +11,7 @@ var obstaclesGroup, obstacle1, obstacle2, obstacle3, obstacle4, obstacle5, obsta
 var score=0;
 
 var gameOver, restart;
+var bg
 
 localStorage["HighestScore"] = 0;
 
@@ -31,6 +32,8 @@ function preload(){
   
   gameOverImg = loadImage("gameOver.png");
   restartImg = loadImage("restart.png");
+  
+  bg = loadImage("bg.jpg");
 }
 
 function setup() {
@@ -70,7 +73,7 @@ function setup() {
 
 function draw() {
   //trex.debug = true;
-  background(255);
+  background(bg);
   text("Score: "+ score, 500,50);
   
   camera.position.x = trex.x
